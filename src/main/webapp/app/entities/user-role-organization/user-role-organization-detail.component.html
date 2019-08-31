@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="userRoleOrganization">
+            <h2><span jhiTranslate="getewayApp.userRoleOrganization.detail.title">User Role Organization</span> {{userRoleOrganization.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="getewayApp.userRoleOrganization.userName" [ngbTooltip]="'getewayApp.userRoleOrganization.help.userName' | translate">User Name</span></dt>
+                <dd>
+                    <span>{{userRoleOrganization.userName}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userRoleOrganization.roleName" [ngbTooltip]="'getewayApp.userRoleOrganization.help.roleName' | translate">Role Name</span></dt>
+                <dd>
+                    <span>{{userRoleOrganization.roleName}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userRoleOrganization.orgName" [ngbTooltip]="'getewayApp.userRoleOrganization.help.orgName' | translate">Org Name</span></dt>
+                <dd>
+                    <span>{{userRoleOrganization.orgName}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userRoleOrganization.user">User</span></dt>
+                <dd>
+                    <div *ngIf="userRoleOrganization.userId">
+                        <a [routerLink]="['/userx', userRoleOrganization.userId, 'view']">{{userRoleOrganization.userLogin}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userRoleOrganization.role">Role</span></dt>
+                <dd>
+                    <div *ngIf="userRoleOrganization.roleId">
+                        <a [routerLink]="['/role', userRoleOrganization.roleId, 'view']">{{userRoleOrganization.roleRoleName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userRoleOrganization.organization">Organization</span></dt>
+                <dd>
+                    <div *ngIf="userRoleOrganization.organizationId">
+                        <a [routerLink]="['/organization', userRoleOrganization.organizationId, 'view']">{{userRoleOrganization.organizationOrgName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-role-organization', userRoleOrganization.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

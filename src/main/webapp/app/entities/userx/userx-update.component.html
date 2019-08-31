@@ -1,0 +1,121 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-userx-heading" jhiTranslate="getewayApp.userx.home.createOrEditLabel">Create or edit a Userx</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.login" for="field_login" [ngbTooltip]="'getewayApp.userx.help.login' | translate">Login</label>
+                    <input type="text" class="form-control" name="login" id="field_login"
+                           formControlName="login"/>
+                    <div *ngIf="editForm.get('login').invalid && (editForm.get('login').dirty || editForm.get('login').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('login').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('login').errors.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 50 }">
+                        This field is required to be at least 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.password" for="field_password" [ngbTooltip]="'getewayApp.userx.help.password' | translate">Password</label>
+                    <input type="text" class="form-control" name="password" id="field_password"
+                           formControlName="password"/>
+                    <div *ngIf="editForm.get('password').invalid && (editForm.get('password').dirty || editForm.get('password').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('password').errors.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 60 }">
+                        This field is required to be at least 60 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.firstName" for="field_firstName" [ngbTooltip]="'getewayApp.userx.help.firstName' | translate">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                           formControlName="firstName"/>
+                    <div *ngIf="editForm.get('firstName').invalid && (editForm.get('firstName').dirty || editForm.get('firstName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('firstName').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.lastName" for="field_lastName" [ngbTooltip]="'getewayApp.userx.help.lastName' | translate">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                           formControlName="lastName"/>
+                    <div *ngIf="editForm.get('lastName').invalid && (editForm.get('lastName').dirty || editForm.get('lastName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lastName').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.email" for="field_email" [ngbTooltip]="'getewayApp.userx.help.email' | translate">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.activated" for="field_activated" [ngbTooltip]="'getewayApp.userx.help.activated' | translate">Activated</label>
+                    <input type="checkbox" class="form-control" name="activated" id="field_activated"
+                           formControlName="activated"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.langKey" for="field_langKey" [ngbTooltip]="'getewayApp.userx.help.langKey' | translate">Lang Key</label>
+                    <input type="text" class="form-control" name="langKey" id="field_langKey"
+                           formControlName="langKey"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.imageUrl" for="field_imageUrl" [ngbTooltip]="'getewayApp.userx.help.imageUrl' | translate">Image Url</label>
+                    <input type="text" class="form-control" name="imageUrl" id="field_imageUrl"
+                           formControlName="imageUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.activationKey" for="field_activationKey" [ngbTooltip]="'getewayApp.userx.help.activationKey' | translate">Activation Key</label>
+                    <input type="text" class="form-control" name="activationKey" id="field_activationKey"
+                           formControlName="activationKey"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.resetKey" for="field_resetKey" [ngbTooltip]="'getewayApp.userx.help.resetKey' | translate">Reset Key</label>
+                    <input type="text" class="form-control" name="resetKey" id="field_resetKey"
+                           formControlName="resetKey"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.resetDate" for="field_resetDate" [ngbTooltip]="'getewayApp.userx.help.resetDate' | translate">Reset Date</label>
+                    <div class="d-flex">
+                        <input id="field_resetDate" type="datetime-local" class="form-control" name="resetDate" formControlName="resetDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.userx.organization" for="field_organization">Organization</label>
+                    <select class="form-control" id="field_organization" name="organization" formControlName="organizationId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="organizationOption.id" *ngFor="let organizationOption of organizations; trackBy: trackOrganizationById">{{organizationOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="getewayApp.userx.roles" for="field_roles">Roles</label>
+                    <select class="form-control" id="field_roles" multiple name="roles" formControlName="roles">
+                        <option [ngValue]="getSelected(editForm.get('roles').value, roleOption)" *ngFor="let roleOption of roles; trackBy: trackRoleById">{{roleOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

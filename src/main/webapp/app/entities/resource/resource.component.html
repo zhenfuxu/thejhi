@@ -1,0 +1,107 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="getewayApp.resource.home.title">Resources</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-resource" [routerLink]="['/resource/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="getewayApp.resource.home.createLabel">
+            Create a new Resource
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="resources?.length === 0">
+        <span jhiTranslate="getewayApp.resource.home.notFound">No resources found</span>
+    </div>
+    <div class="table-responsive" *ngIf="resources?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resRouterLink"><span jhiTranslate="getewayApp.resource.resRouterLink">Res Router Link</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resDescription"><span jhiTranslate="getewayApp.resource.resDescription">Res Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resFlag"><span jhiTranslate="getewayApp.resource.resFlag">Res Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resOperate"><span jhiTranslate="getewayApp.resource.resOperate">Res Operate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resHref"><span jhiTranslate="getewayApp.resource.resHref">Res Href</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resSrc"><span jhiTranslate="getewayApp.resource.resSrc">Res Src</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resText"><span jhiTranslate="getewayApp.resource.resText">Res Text</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resClass"><span jhiTranslate="getewayApp.resource.resClass">Res Class</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resEffDate"><span jhiTranslate="getewayApp.resource.resEffDate">Res Eff Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resExpDate"><span jhiTranslate="getewayApp.resource.resExpDate">Res Exp Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resLft"><span jhiTranslate="getewayApp.resource.resLft">Res Lft</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resRgt"><span jhiTranslate="getewayApp.resource.resRgt">Res Rgt</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resLevel"><span jhiTranslate="getewayApp.resource.resLevel">Res Level</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resOrder"><span jhiTranslate="getewayApp.resource.resOrder">Res Order</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="leaf"><span jhiTranslate="getewayApp.resource.leaf">Leaf</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resDisabled"><span jhiTranslate="getewayApp.resource.resDisabled">Res Disabled</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resChecked"><span jhiTranslate="getewayApp.resource.resChecked">Res Checked</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resExpanded"><span jhiTranslate="getewayApp.resource.resExpanded">Res Expanded</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="resSelected"><span jhiTranslate="getewayApp.resource.resSelected">Res Selected</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="upperId"><span jhiTranslate="getewayApp.resource.upper">Upper</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let resource of resources ;trackBy: trackId">
+                <td><a [routerLink]="['/resource', resource.id, 'view' ]">{{resource.id}}</a></td>
+                <td>{{resource.resRouterLink}}</td>
+                <td>{{resource.resDescription}}</td>
+                <td>{{resource.resFlag}}</td>
+                <td>{{resource.resOperate}}</td>
+                <td>{{resource.resHref}}</td>
+                <td>{{resource.resSrc}}</td>
+                <td>{{resource.resText}}</td>
+                <td>{{resource.resClass}}</td>
+                <td>{{resource.resEffDate | date:'medium'}}</td>
+                <td>{{resource.resExpDate | date:'medium'}}</td>
+                <td>{{resource.resLft}}</td>
+                <td>{{resource.resRgt}}</td>
+                <td>{{resource.resLevel}}</td>
+                <td>{{resource.resOrder}}</td>
+                <td>{{resource.leaf}}</td>
+                <td>{{resource.resDisabled}}</td>
+                <td>{{resource.resChecked}}</td>
+                <td>{{resource.resExpanded}}</td>
+                <td>{{resource.resSelected}}</td>
+                <td>
+                    <div *ngIf="resource.upperId">
+                        <a [routerLink]="['/resource', resource.upperId , 'view' ]" >{{resource.upperId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/resource', resource.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/resource', resource.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/resource', { outlets: { popup: resource.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="resources?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

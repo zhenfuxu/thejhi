@@ -1,0 +1,272 @@
+
+/**
+ * 组织机构 entity.
+ * @author zhenfuxu@gmail.com.
+ */
+entity Organization (t_organizationx) {
+	/**
+     * 机构名称
+     */
+	orgName String,
+	/**
+     * 机构代码
+     */
+    orgCode String,
+    /**
+     * 机构标记
+     */
+    orgFlag String,
+    /**
+     * 机构行政区划编码
+     */
+    orgAreaCode String,
+    /**
+     * 机构行政区划名字
+     */
+    orgAreaName String,
+    /**
+     * 机构描述
+     */
+    orgDescription String,
+    /**
+     * 机构左子树
+     */
+    orgLft Long,
+    /**
+     * 机构右子树
+     */
+    orgRgt Long,
+    /**
+     * 机构层级
+     */
+    orgLevel Long,
+    /**
+     * 机构排序
+     */
+    orgOrder Long,
+    /**
+     * 是否叶子节点
+     */
+    leaf Boolean
+}
+/**
+ * 资源 entity.
+ * @author zhenfuxu@gmail.com.
+ */
+entity Resource (t_resourcex) {
+	/**
+     * 资源连接
+     */
+	resRouterLink String,
+    /**
+     * 资源描述
+     */
+    resDescription String,
+    /**
+     * 资源标记
+     */
+    resFlag String,
+    /**
+     * 资源操作
+     */
+    resOperate String,
+    /**
+     * 资源a连接
+     */
+    resHref String,
+    /**
+     * 资源源地址
+     */
+    resSrc String,
+    /**
+     * 资源显示文本
+     */
+    resText String,
+    /**
+     * 资源css类
+     */
+    resClass String,
+    /**
+     * 资源生效时间
+     */
+    resEffDate ZonedDateTime,
+    /**
+     * 资源失效时间
+     */
+    resExpDate ZonedDateTime,
+    /**
+     * 资源左
+     */
+    resLft Long,
+    /**
+     * 资源右
+     */
+    resRgt Long,
+    /**
+     * 资源层级
+     */
+    resLevel Long,
+    /**
+     * 资源顺序
+     */
+    resOrder Long,
+    /**
+     * 资源是否叶子
+     */
+    leaf Boolean,
+    /**
+     * 资源禁用
+     */
+    resDisabled Boolean,
+    /**
+     * 资源勾选
+     */
+    resChecked Boolean,
+    /**
+     * 资源展开
+     */
+    resExpanded Boolean,
+    /**
+     * 资源选中
+     */
+    resSelected Boolean
+}
+/**
+ * 角色 entity.
+ * @author zhenfuxu@gmail.com.
+ */
+entity Role (t_rolex) {
+	/**
+     * 角色名称
+     */
+	roleName String,
+    /**
+     * 角色描述
+     */
+    roleDescription String,
+    /**
+     * 角色标记
+     */
+    roleFlag String,
+    /**
+     * 角色生效时间
+     */
+    roleEffDate ZonedDateTime,
+    /**
+     * 角色失效时间
+     */
+    roleExpDate ZonedDateTime
+}
+/**
+ * 用户
+ * @author zhenfuxu@gmail.com.
+ */
+entity Userx (t_userx) {
+	/**
+     * 登录账号
+     */
+	login String minlength(1) minlength(50) required,
+    /**
+     * 登录密码
+     */
+    password String minlength(60) minlength(60),
+    /**
+     * 名
+     */
+    firstName String maxlength(50),
+    /**
+     * 姓
+     */
+    lastName String maxlength(50),
+    /**
+     * 邮箱
+     */
+    email String,
+    /**
+     * 是否激活
+     */
+    activated Boolean,
+    /**
+     * 语言
+     */
+    langKey String,
+    /**
+     * 头像
+     */
+    imageUrl String,
+    /**
+     * 激活密钥
+     */
+    activationKey String,
+    /**
+     * 重置密钥
+     */
+    resetKey String,
+    /**
+     * 重置时间
+     */
+    resetDate Instant
+}
+entity UserRoleOrganization (t_user_role_organizationx){
+	/**
+     * 名字。
+	 */
+	userName String,
+    /**
+     * 角色。
+	 */
+    roleName String,
+    /**
+     * 机构。
+	 */
+    orgName String
+}
+
+relationship ManyToMany {
+	/**
+     * 角色对应多个资源。
+	 */
+	Role{resources} to Resource,
+    /**
+     * 用户对应多个角色。
+	 */
+	Userx{roles} to Role
+}
+relationship ManyToOne {
+	/**
+     * The 上级。
+	 */
+	Resource{upper} to Resource,
+    /**
+     * The 用户所在机构。
+	 */
+	Userx{organization} to Organization,
+    /**
+     * The 上级。
+	 */
+    Organization{upper} to Organization
+}
+relationship OneToOne {
+	/**
+     * 用户。
+	 */
+    UserRoleOrganization{user(login) required} to Userx,
+    /**
+     * 角色。
+	 */
+    UserRoleOrganization{role(roleName) required} to Role,
+    /**
+     * 机构。
+	 */
+    UserRoleOrganization{organization(orgName)} to Organization
+}
+
+paginate Userx, Organization, Resource, Role, UserRoleOrganization with pagination
+
+dto * with mapstruct
+filter Userx, Organization, Resource, Role, UserRoleOrganization
+service all with serviceImpl
+
+/** 
+ * service all with serviceImpl except Organization, UserRoleOrganization, Resource, Role
+ */

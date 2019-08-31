@@ -1,0 +1,120 @@
+{
+    "name": "Resource",
+    "fields": [
+        {
+            "fieldName": "resRouterLink",
+            "javadoc": "资源连接",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resDescription",
+            "javadoc": "资源描述",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resFlag",
+            "javadoc": "资源标记",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resOperate",
+            "javadoc": "资源操作",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resHref",
+            "javadoc": "资源a连接",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resSrc",
+            "javadoc": "资源源地址",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resText",
+            "javadoc": "资源显示文本",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resClass",
+            "javadoc": "资源css类",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resEffDate",
+            "javadoc": "资源生效时间",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "resExpDate",
+            "javadoc": "资源失效时间",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "resLft",
+            "javadoc": "资源左",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "resRgt",
+            "javadoc": "资源右",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "resLevel",
+            "javadoc": "资源层级",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "resOrder",
+            "javadoc": "资源顺序",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "leaf",
+            "javadoc": "资源是否叶子",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "resDisabled",
+            "javadoc": "资源禁用",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "resChecked",
+            "javadoc": "资源勾选",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "resExpanded",
+            "javadoc": "资源展开",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "resSelected",
+            "javadoc": "资源选中",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "resource",
+            "javadoc": "The 上级。",
+            "relationshipName": "upper",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190831104148",
+    "javadoc": "资源 entity.\n@author zhenfuxu@gmail.com.",
+    "entityTableName": "t_resourcex",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

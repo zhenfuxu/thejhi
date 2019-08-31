@@ -1,0 +1,46 @@
+/**
+ * 附件 entity.
+ * @author zhenfuxu@gmail.com.
+ */
+entity Attachment (t_attachment){
+		/* 附件名称 */
+		fileName String required,
+    /* 附件类型 */
+    fileType String,
+    /* 路径 */
+    filePath String,
+    /* 上传人 */
+    uploader String,
+    /* 上传时间 */
+    uploadTime Instant,
+    /* 附件大小 */
+    fileSize Long,
+    /* 备用 */
+    fOther String,
+    /* 关联id */
+			relatedId Long
+}
+
+// 多对一的映射
+//relationship ManyToMany {
+	//Commodity{dictionary} to DictionaryB
+//}
+
+// defining multiple OneToMany relationships with comments
+//relationship OneToMany {
+	//CommodityOrder{items} to OrderItem,
+    //CommodityCart{items} to CartItem
+//}
+
+// Set pagination options
+// paginate Commodity, CommodityCart with infinite-scroll
+paginate Attachment with pagination
+
+dto * with mapstruct
+
+filter Attachment
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+// angularSuffix * with mySuffix

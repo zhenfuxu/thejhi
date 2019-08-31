@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="userx">
+            <h2><span jhiTranslate="getewayApp.userx.detail.title">Userx</span> {{userx.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="getewayApp.userx.login" [ngbTooltip]="'getewayApp.userx.help.login' | translate">Login</span></dt>
+                <dd>
+                    <span>{{userx.login}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.password" [ngbTooltip]="'getewayApp.userx.help.password' | translate">Password</span></dt>
+                <dd>
+                    <span>{{userx.password}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.firstName" [ngbTooltip]="'getewayApp.userx.help.firstName' | translate">First Name</span></dt>
+                <dd>
+                    <span>{{userx.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.lastName" [ngbTooltip]="'getewayApp.userx.help.lastName' | translate">Last Name</span></dt>
+                <dd>
+                    <span>{{userx.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.email" [ngbTooltip]="'getewayApp.userx.help.email' | translate">Email</span></dt>
+                <dd>
+                    <span>{{userx.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.activated" [ngbTooltip]="'getewayApp.userx.help.activated' | translate">Activated</span></dt>
+                <dd>
+                    <span>{{userx.activated}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.langKey" [ngbTooltip]="'getewayApp.userx.help.langKey' | translate">Lang Key</span></dt>
+                <dd>
+                    <span>{{userx.langKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.imageUrl" [ngbTooltip]="'getewayApp.userx.help.imageUrl' | translate">Image Url</span></dt>
+                <dd>
+                    <span>{{userx.imageUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.activationKey" [ngbTooltip]="'getewayApp.userx.help.activationKey' | translate">Activation Key</span></dt>
+                <dd>
+                    <span>{{userx.activationKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.resetKey" [ngbTooltip]="'getewayApp.userx.help.resetKey' | translate">Reset Key</span></dt>
+                <dd>
+                    <span>{{userx.resetKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.resetDate" [ngbTooltip]="'getewayApp.userx.help.resetDate' | translate">Reset Date</span></dt>
+                <dd>
+                    <span>{{userx.resetDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.organization">Organization</span></dt>
+                <dd>
+                    <div *ngIf="userx.organizationId">
+                        <a [routerLink]="['/organization', userx.organizationId, 'view']">{{userx.organizationId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.userx.roles">Roles</span></dt>
+                <dd>
+                    <span *ngFor="let roles of userx.roles; let last = last">
+                        <a [routerLink]="['/role', roles?.id, 'view' ]">{{roles.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/userx', userx.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

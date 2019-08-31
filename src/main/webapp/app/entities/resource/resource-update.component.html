@@ -1,0 +1,128 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-resource-heading" jhiTranslate="getewayApp.resource.home.createOrEditLabel">Create or edit a Resource</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resRouterLink" for="field_resRouterLink" [ngbTooltip]="'getewayApp.resource.help.resRouterLink' | translate">Res Router Link</label>
+                    <input type="text" class="form-control" name="resRouterLink" id="field_resRouterLink"
+                           formControlName="resRouterLink"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resDescription" for="field_resDescription" [ngbTooltip]="'getewayApp.resource.help.resDescription' | translate">Res Description</label>
+                    <input type="text" class="form-control" name="resDescription" id="field_resDescription"
+                           formControlName="resDescription"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resFlag" for="field_resFlag" [ngbTooltip]="'getewayApp.resource.help.resFlag' | translate">Res Flag</label>
+                    <input type="text" class="form-control" name="resFlag" id="field_resFlag"
+                           formControlName="resFlag"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resOperate" for="field_resOperate" [ngbTooltip]="'getewayApp.resource.help.resOperate' | translate">Res Operate</label>
+                    <input type="text" class="form-control" name="resOperate" id="field_resOperate"
+                           formControlName="resOperate"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resHref" for="field_resHref" [ngbTooltip]="'getewayApp.resource.help.resHref' | translate">Res Href</label>
+                    <input type="text" class="form-control" name="resHref" id="field_resHref"
+                           formControlName="resHref"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resSrc" for="field_resSrc" [ngbTooltip]="'getewayApp.resource.help.resSrc' | translate">Res Src</label>
+                    <input type="text" class="form-control" name="resSrc" id="field_resSrc"
+                           formControlName="resSrc"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resText" for="field_resText" [ngbTooltip]="'getewayApp.resource.help.resText' | translate">Res Text</label>
+                    <input type="text" class="form-control" name="resText" id="field_resText"
+                           formControlName="resText"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resClass" for="field_resClass" [ngbTooltip]="'getewayApp.resource.help.resClass' | translate">Res Class</label>
+                    <input type="text" class="form-control" name="resClass" id="field_resClass"
+                           formControlName="resClass"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resEffDate" for="field_resEffDate" [ngbTooltip]="'getewayApp.resource.help.resEffDate' | translate">Res Eff Date</label>
+                    <div class="d-flex">
+                        <input id="field_resEffDate" type="datetime-local" class="form-control" name="resEffDate" formControlName="resEffDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resExpDate" for="field_resExpDate" [ngbTooltip]="'getewayApp.resource.help.resExpDate' | translate">Res Exp Date</label>
+                    <div class="d-flex">
+                        <input id="field_resExpDate" type="datetime-local" class="form-control" name="resExpDate" formControlName="resExpDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resLft" for="field_resLft" [ngbTooltip]="'getewayApp.resource.help.resLft' | translate">Res Lft</label>
+                    <input type="number" class="form-control" name="resLft" id="field_resLft"
+                           formControlName="resLft"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resRgt" for="field_resRgt" [ngbTooltip]="'getewayApp.resource.help.resRgt' | translate">Res Rgt</label>
+                    <input type="number" class="form-control" name="resRgt" id="field_resRgt"
+                           formControlName="resRgt"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resLevel" for="field_resLevel" [ngbTooltip]="'getewayApp.resource.help.resLevel' | translate">Res Level</label>
+                    <input type="number" class="form-control" name="resLevel" id="field_resLevel"
+                           formControlName="resLevel"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resOrder" for="field_resOrder" [ngbTooltip]="'getewayApp.resource.help.resOrder' | translate">Res Order</label>
+                    <input type="number" class="form-control" name="resOrder" id="field_resOrder"
+                           formControlName="resOrder"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.leaf" for="field_leaf" [ngbTooltip]="'getewayApp.resource.help.leaf' | translate">Leaf</label>
+                    <input type="checkbox" class="form-control" name="leaf" id="field_leaf"
+                           formControlName="leaf"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resDisabled" for="field_resDisabled" [ngbTooltip]="'getewayApp.resource.help.resDisabled' | translate">Res Disabled</label>
+                    <input type="checkbox" class="form-control" name="resDisabled" id="field_resDisabled"
+                           formControlName="resDisabled"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resChecked" for="field_resChecked" [ngbTooltip]="'getewayApp.resource.help.resChecked' | translate">Res Checked</label>
+                    <input type="checkbox" class="form-control" name="resChecked" id="field_resChecked"
+                           formControlName="resChecked"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resExpanded" for="field_resExpanded" [ngbTooltip]="'getewayApp.resource.help.resExpanded' | translate">Res Expanded</label>
+                    <input type="checkbox" class="form-control" name="resExpanded" id="field_resExpanded"
+                           formControlName="resExpanded"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.resSelected" for="field_resSelected" [ngbTooltip]="'getewayApp.resource.help.resSelected' | translate">Res Selected</label>
+                    <input type="checkbox" class="form-control" name="resSelected" id="field_resSelected"
+                           formControlName="resSelected"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.resource.upper" for="field_upper">Upper</label>
+                    <select class="form-control" id="field_upper" name="upper" formControlName="upperId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="resourceOption.id" *ngFor="let resourceOption of resources; trackBy: trackResourceById">{{resourceOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+{
+    "name": "Role",
+    "fields": [
+        {
+            "fieldName": "roleName",
+            "javadoc": "角色名称",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "roleDescription",
+            "javadoc": "角色描述",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "roleFlag",
+            "javadoc": "角色标记",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "roleEffDate",
+            "javadoc": "角色生效时间",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "roleExpDate",
+            "javadoc": "角色失效时间",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "role",
+            "javadoc": "角色对应多个资源。",
+            "relationshipName": "resources",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190831104149",
+    "javadoc": "角色 entity.\n@author zhenfuxu@gmail.com.",
+    "entityTableName": "t_rolex",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

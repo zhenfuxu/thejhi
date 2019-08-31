@@ -1,0 +1,12 @@
+DROP PROCEDURE IF EXISTS proc_initData;
+DELIMITER $
+CREATE PROCEDURE proc_initData()
+BEGIN
+    DECLARE i INT DEFAULT 1;
+    WHILE i<=10000 DO
+        INSERT INTO `gateway`.`t_attachment` (`file_name`, `file_type`, `file_path`, `uploader`, `upload_time`, `file_size`, `f_other`, `related_id`) VALUES ('2', '2', '2', '2', '2019-03-11 17:01:00', '22', '22', '2');
+        SET i = i+1;
+    END WHILE;
+END $
+
+CALL `gateway`.`proc_initData`();

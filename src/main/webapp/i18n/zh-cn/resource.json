@@ -1,0 +1,62 @@
+{
+  "getewayApp": {
+    "resource": {
+      "home": {
+        "title": "Resources",
+        "createLabel": "创建新 Resource",
+        "createOrEditLabel": "创建或编辑 Resource",
+        "notFound": "No Resources found"
+      },
+      "created": "Resource {{ param }} 创建成功",
+      "updated": "Resource {{ param }} 更新成功",
+      "deleted": "Resource {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Resource {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Resource"
+      },
+      "resRouterLink": "Res Router Link",
+      "resDescription": "Res Description",
+      "resFlag": "Res Flag",
+      "resOperate": "Res Operate",
+      "resHref": "Res Href",
+      "resSrc": "Res Src",
+      "resText": "Res Text",
+      "resClass": "Res Class",
+      "resEffDate": "Res Eff Date",
+      "resExpDate": "Res Exp Date",
+      "resLft": "Res Lft",
+      "resRgt": "Res Rgt",
+      "resLevel": "Res Level",
+      "resOrder": "Res Order",
+      "leaf": "Leaf",
+      "resDisabled": "Res Disabled",
+      "resChecked": "Res Checked",
+      "resExpanded": "Res Expanded",
+      "resSelected": "Res Selected",
+      "upper": "Upper",
+      "help": {
+        "resRouterLink": "资源连接",
+        "resDescription": "资源描述",
+        "resFlag": "资源标记",
+        "resOperate": "资源操作",
+        "resHref": "资源a连接",
+        "resSrc": "资源源地址",
+        "resText": "资源显示文本",
+        "resClass": "资源css类",
+        "resEffDate": "资源生效时间",
+        "resExpDate": "资源失效时间",
+        "resLft": "资源左",
+        "resRgt": "资源右",
+        "resLevel": "资源层级",
+        "resOrder": "资源顺序",
+        "leaf": "资源是否叶子",
+        "resDisabled": "资源禁用",
+        "resChecked": "资源勾选",
+        "resExpanded": "资源展开",
+        "resSelected": "资源选中"
+      }
+    }
+  }
+}

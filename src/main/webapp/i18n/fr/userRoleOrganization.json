@@ -1,0 +1,32 @@
+{
+  "getewayApp": {
+    "userRoleOrganization": {
+      "home": {
+        "title": "UserRoleOrganizations",
+        "createLabel": "Créer un nouveau User Role Organization",
+        "createOrEditLabel": "Créer ou éditer un User Role Organization",
+        "notFound": "Aucun User Role Organization trouvé"
+      },
+      "created": "Un nouveau User Role Organization a été créé avec l'identifiant {{ param }}",
+      "updated": "Le User Role Organization avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le User Role Organization avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le User Role Organization {{ id }} ?"
+      },
+      "detail": {
+        "title": "User Role Organization"
+      },
+      "userName": "User Name",
+      "roleName": "Role Name",
+      "orgName": "Org Name",
+      "user": "User",
+      "role": "Role",
+      "organization": "Organization",
+      "help": {
+        "userName": "名字。",
+        "roleName": "角色。",
+        "orgName": "机构。"
+      }
+    }
+  }
+}

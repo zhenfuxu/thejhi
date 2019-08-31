@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="resource">
+            <h2><span jhiTranslate="getewayApp.resource.detail.title">Resource</span> {{resource.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="getewayApp.resource.resRouterLink" [ngbTooltip]="'getewayApp.resource.help.resRouterLink' | translate">Res Router Link</span></dt>
+                <dd>
+                    <span>{{resource.resRouterLink}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resDescription" [ngbTooltip]="'getewayApp.resource.help.resDescription' | translate">Res Description</span></dt>
+                <dd>
+                    <span>{{resource.resDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resFlag" [ngbTooltip]="'getewayApp.resource.help.resFlag' | translate">Res Flag</span></dt>
+                <dd>
+                    <span>{{resource.resFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resOperate" [ngbTooltip]="'getewayApp.resource.help.resOperate' | translate">Res Operate</span></dt>
+                <dd>
+                    <span>{{resource.resOperate}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resHref" [ngbTooltip]="'getewayApp.resource.help.resHref' | translate">Res Href</span></dt>
+                <dd>
+                    <span>{{resource.resHref}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resSrc" [ngbTooltip]="'getewayApp.resource.help.resSrc' | translate">Res Src</span></dt>
+                <dd>
+                    <span>{{resource.resSrc}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resText" [ngbTooltip]="'getewayApp.resource.help.resText' | translate">Res Text</span></dt>
+                <dd>
+                    <span>{{resource.resText}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resClass" [ngbTooltip]="'getewayApp.resource.help.resClass' | translate">Res Class</span></dt>
+                <dd>
+                    <span>{{resource.resClass}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resEffDate" [ngbTooltip]="'getewayApp.resource.help.resEffDate' | translate">Res Eff Date</span></dt>
+                <dd>
+                    <span>{{resource.resEffDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resExpDate" [ngbTooltip]="'getewayApp.resource.help.resExpDate' | translate">Res Exp Date</span></dt>
+                <dd>
+                    <span>{{resource.resExpDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resLft" [ngbTooltip]="'getewayApp.resource.help.resLft' | translate">Res Lft</span></dt>
+                <dd>
+                    <span>{{resource.resLft}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resRgt" [ngbTooltip]="'getewayApp.resource.help.resRgt' | translate">Res Rgt</span></dt>
+                <dd>
+                    <span>{{resource.resRgt}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resLevel" [ngbTooltip]="'getewayApp.resource.help.resLevel' | translate">Res Level</span></dt>
+                <dd>
+                    <span>{{resource.resLevel}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resOrder" [ngbTooltip]="'getewayApp.resource.help.resOrder' | translate">Res Order</span></dt>
+                <dd>
+                    <span>{{resource.resOrder}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.leaf" [ngbTooltip]="'getewayApp.resource.help.leaf' | translate">Leaf</span></dt>
+                <dd>
+                    <span>{{resource.leaf}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resDisabled" [ngbTooltip]="'getewayApp.resource.help.resDisabled' | translate">Res Disabled</span></dt>
+                <dd>
+                    <span>{{resource.resDisabled}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resChecked" [ngbTooltip]="'getewayApp.resource.help.resChecked' | translate">Res Checked</span></dt>
+                <dd>
+                    <span>{{resource.resChecked}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resExpanded" [ngbTooltip]="'getewayApp.resource.help.resExpanded' | translate">Res Expanded</span></dt>
+                <dd>
+                    <span>{{resource.resExpanded}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.resSelected" [ngbTooltip]="'getewayApp.resource.help.resSelected' | translate">Res Selected</span></dt>
+                <dd>
+                    <span>{{resource.resSelected}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.resource.upper">Upper</span></dt>
+                <dd>
+                    <div *ngIf="resource.upperId">
+                        <a [routerLink]="['/resource', resource.upperId, 'view']">{{resource.upperId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/resource', resource.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

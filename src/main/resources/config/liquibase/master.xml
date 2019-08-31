@@ -14,6 +14,16 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190831104147_added_entity_Organization.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190831104148_added_entity_Resource.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190831104149_added_entity_Role.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190831104150_added_entity_Userx.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190831104151_added_entity_UserRoleOrganization.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190831104147_added_entity_constraints_Organization.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190831104148_added_entity_constraints_Resource.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190831104149_added_entity_constraints_Role.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190831104150_added_entity_constraints_Userx.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190831104151_added_entity_constraints_UserRoleOrganization.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

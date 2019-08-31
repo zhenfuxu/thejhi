@@ -1,0 +1,106 @@
+{
+    "name": "Userx",
+    "fields": [
+        {
+            "fieldName": "login",
+            "javadoc": "登录账号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": 50
+        },
+        {
+            "fieldName": "password",
+            "javadoc": "登录密码",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": 60
+        },
+        {
+            "fieldName": "firstName",
+            "javadoc": "名",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "lastName",
+            "javadoc": "姓",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "email",
+            "javadoc": "邮箱",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activated",
+            "javadoc": "是否激活",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "langKey",
+            "javadoc": "语言",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageUrl",
+            "javadoc": "头像",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activationKey",
+            "javadoc": "激活密钥",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resetKey",
+            "javadoc": "重置密钥",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resetDate",
+            "javadoc": "重置时间",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "organization",
+            "otherEntityRelationshipName": "userx",
+            "javadoc": "The 用户所在机构。",
+            "relationshipName": "organization",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "role",
+            "otherEntityRelationshipName": "userx",
+            "javadoc": "用户对应多个角色。",
+            "relationshipName": "roles",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190831104150",
+    "javadoc": "用户\n@author zhenfuxu@gmail.com.",
+    "entityTableName": "t_userx",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

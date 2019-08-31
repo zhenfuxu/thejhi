@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="role">
+            <h2><span jhiTranslate="getewayApp.role.detail.title">Role</span> {{role.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="getewayApp.role.roleName" [ngbTooltip]="'getewayApp.role.help.roleName' | translate">Role Name</span></dt>
+                <dd>
+                    <span>{{role.roleName}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.role.roleDescription" [ngbTooltip]="'getewayApp.role.help.roleDescription' | translate">Role Description</span></dt>
+                <dd>
+                    <span>{{role.roleDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.role.roleFlag" [ngbTooltip]="'getewayApp.role.help.roleFlag' | translate">Role Flag</span></dt>
+                <dd>
+                    <span>{{role.roleFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.role.roleEffDate" [ngbTooltip]="'getewayApp.role.help.roleEffDate' | translate">Role Eff Date</span></dt>
+                <dd>
+                    <span>{{role.roleEffDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.role.roleExpDate" [ngbTooltip]="'getewayApp.role.help.roleExpDate' | translate">Role Exp Date</span></dt>
+                <dd>
+                    <span>{{role.roleExpDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.role.resources">Resources</span></dt>
+                <dd>
+                    <span *ngFor="let resources of role.resources; let last = last">
+                        <a [routerLink]="['/resource', resources?.id, 'view' ]">{{resources.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/role', role.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

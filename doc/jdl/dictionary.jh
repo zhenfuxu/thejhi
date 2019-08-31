@@ -1,0 +1,71 @@
+/**
+ * The Dictionaryx entity.
+ * @author zhenfuxu@gmail.com.
+ */
+entity Dictionaryx (t_dictionaryx) {
+    /**
+     * The 键。
+     */
+	dicKey String,
+    /**
+     * The 值。
+     */
+	dicValue String,
+    /**
+     * The 标记。
+     */
+	dicFlag String,
+    /**
+     * The 名称空间用:分隔的上级节点的key和当前节点的key。
+     */
+    dicNameSpace String,
+    /**
+     * The dicNameSpace 字段值的MD5值。
+     */
+    dicNameSpaceMd5 String,
+    /**
+     * The 描述。
+     */
+    dicDescription String,
+    /**
+     * The 堆排序使用。
+     */
+    dicLft Integer,
+    /**
+     * The 级别。
+     */
+    dicLevel Integer,
+    /**
+     * The 顺序。
+     */
+    dicOrder Float,
+    /**
+     * The 是否为叶子节点。
+     */
+    leaf Boolean,
+    /**
+     * The 是否禁用。
+     */
+    dicDisabled Boolean
+}
+
+relationship ManyToOne {
+	/**
+     * The 上级。
+	 */
+	Dictionaryx{upper} to Dictionaryx
+}
+// Set pagination options
+// paginate Commodity, CommodityCart with infinite-scroll
+paginate Dictionaryx with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+filter Dictionaryx
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

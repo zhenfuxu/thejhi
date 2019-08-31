@@ -1,0 +1,34 @@
+{
+  "getewayApp": {
+    "role": {
+      "home": {
+        "title": "Roles",
+        "createLabel": "Créer un nouveau Role",
+        "createOrEditLabel": "Créer ou éditer un Role",
+        "notFound": "Aucun Role trouvé"
+      },
+      "created": "Un nouveau Role a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Role avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Role avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Role {{ id }} ?"
+      },
+      "detail": {
+        "title": "Role"
+      },
+      "roleName": "Role Name",
+      "roleDescription": "Role Description",
+      "roleFlag": "Role Flag",
+      "roleEffDate": "Role Eff Date",
+      "roleExpDate": "Role Exp Date",
+      "resources": "Resources",
+      "help": {
+        "roleName": "角色名称",
+        "roleDescription": "角色描述",
+        "roleFlag": "角色标记",
+        "roleEffDate": "角色生效时间",
+        "roleExpDate": "角色失效时间"
+      }
+    }
+  }
+}

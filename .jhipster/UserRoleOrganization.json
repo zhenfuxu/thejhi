@@ -1,0 +1,60 @@
+{
+    "name": "UserRoleOrganization",
+    "fields": [
+        {
+            "fieldName": "userName",
+            "javadoc": "名字。",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "roleName",
+            "javadoc": "角色。",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgName",
+            "javadoc": "机构。",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "userx",
+            "otherEntityRelationshipName": "userRoleOrganization",
+            "relationshipValidateRules": "required",
+            "javadoc": "用户。",
+            "relationshipName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "role",
+            "otherEntityRelationshipName": "userRoleOrganization",
+            "relationshipValidateRules": "required",
+            "javadoc": "角色。",
+            "relationshipName": "role",
+            "otherEntityField": "roleName",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "organization",
+            "otherEntityRelationshipName": "userRoleOrganization",
+            "javadoc": "机构。",
+            "relationshipName": "organization",
+            "otherEntityField": "orgName",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190831104151",
+    "entityTableName": "t_user_role_organizationx",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

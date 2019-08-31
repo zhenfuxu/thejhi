@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-organization-heading" jhiTranslate="getewayApp.organization.home.createOrEditLabel">Create or edit a Organization</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgName" for="field_orgName" [ngbTooltip]="'getewayApp.organization.help.orgName' | translate">Org Name</label>
+                    <input type="text" class="form-control" name="orgName" id="field_orgName"
+                           formControlName="orgName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgCode" for="field_orgCode" [ngbTooltip]="'getewayApp.organization.help.orgCode' | translate">Org Code</label>
+                    <input type="text" class="form-control" name="orgCode" id="field_orgCode"
+                           formControlName="orgCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgFlag" for="field_orgFlag" [ngbTooltip]="'getewayApp.organization.help.orgFlag' | translate">Org Flag</label>
+                    <input type="text" class="form-control" name="orgFlag" id="field_orgFlag"
+                           formControlName="orgFlag"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgAreaCode" for="field_orgAreaCode" [ngbTooltip]="'getewayApp.organization.help.orgAreaCode' | translate">Org Area Code</label>
+                    <input type="text" class="form-control" name="orgAreaCode" id="field_orgAreaCode"
+                           formControlName="orgAreaCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgAreaName" for="field_orgAreaName" [ngbTooltip]="'getewayApp.organization.help.orgAreaName' | translate">Org Area Name</label>
+                    <input type="text" class="form-control" name="orgAreaName" id="field_orgAreaName"
+                           formControlName="orgAreaName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgDescription" for="field_orgDescription" [ngbTooltip]="'getewayApp.organization.help.orgDescription' | translate">Org Description</label>
+                    <input type="text" class="form-control" name="orgDescription" id="field_orgDescription"
+                           formControlName="orgDescription"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgLft" for="field_orgLft" [ngbTooltip]="'getewayApp.organization.help.orgLft' | translate">Org Lft</label>
+                    <input type="number" class="form-control" name="orgLft" id="field_orgLft"
+                           formControlName="orgLft"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgRgt" for="field_orgRgt" [ngbTooltip]="'getewayApp.organization.help.orgRgt' | translate">Org Rgt</label>
+                    <input type="number" class="form-control" name="orgRgt" id="field_orgRgt"
+                           formControlName="orgRgt"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgLevel" for="field_orgLevel" [ngbTooltip]="'getewayApp.organization.help.orgLevel' | translate">Org Level</label>
+                    <input type="number" class="form-control" name="orgLevel" id="field_orgLevel"
+                           formControlName="orgLevel"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.orgOrder" for="field_orgOrder" [ngbTooltip]="'getewayApp.organization.help.orgOrder' | translate">Org Order</label>
+                    <input type="number" class="form-control" name="orgOrder" id="field_orgOrder"
+                           formControlName="orgOrder"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.leaf" for="field_leaf" [ngbTooltip]="'getewayApp.organization.help.leaf' | translate">Leaf</label>
+                    <input type="checkbox" class="form-control" name="leaf" id="field_leaf"
+                           formControlName="leaf"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="getewayApp.organization.upper" for="field_upper">Upper</label>
+                    <select class="form-control" id="field_upper" name="upper" formControlName="upperId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="organizationOption.id" *ngFor="let organizationOption of organizations; trackBy: trackOrganizationById">{{organizationOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

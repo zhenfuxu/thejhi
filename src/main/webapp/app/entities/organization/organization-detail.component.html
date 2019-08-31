@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="organization">
+            <h2><span jhiTranslate="getewayApp.organization.detail.title">Organization</span> {{organization.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="getewayApp.organization.orgName" [ngbTooltip]="'getewayApp.organization.help.orgName' | translate">Org Name</span></dt>
+                <dd>
+                    <span>{{organization.orgName}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.orgCode" [ngbTooltip]="'getewayApp.organization.help.orgCode' | translate">Org Code</span></dt>
+                <dd>
+                    <span>{{organization.orgCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.orgFlag" [ngbTooltip]="'getewayApp.organization.help.orgFlag' | translate">Org Flag</span></dt>
+                <dd>
+                    <span>{{organization.orgFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.orgAreaCode" [ngbTooltip]="'getewayApp.organization.help.orgAreaCode' | translate">Org Area Code</span></dt>
+                <dd>
+                    <span>{{organization.orgAreaCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.orgAreaName" [ngbTooltip]="'getewayApp.organization.help.orgAreaName' | translate">Org Area Name</span></dt>
+                <dd>
+                    <span>{{organization.orgAreaName}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.orgDescription" [ngbTooltip]="'getewayApp.organization.help.orgDescription' | translate">Org Description</span></dt>
+                <dd>
+                    <span>{{organization.orgDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.orgLft" [ngbTooltip]="'getewayApp.organization.help.orgLft' | translate">Org Lft</span></dt>
+                <dd>
+                    <span>{{organization.orgLft}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.orgRgt" [ngbTooltip]="'getewayApp.organization.help.orgRgt' | translate">Org Rgt</span></dt>
+                <dd>
+                    <span>{{organization.orgRgt}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.orgLevel" [ngbTooltip]="'getewayApp.organization.help.orgLevel' | translate">Org Level</span></dt>
+                <dd>
+                    <span>{{organization.orgLevel}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.orgOrder" [ngbTooltip]="'getewayApp.organization.help.orgOrder' | translate">Org Order</span></dt>
+                <dd>
+                    <span>{{organization.orgOrder}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.leaf" [ngbTooltip]="'getewayApp.organization.help.leaf' | translate">Leaf</span></dt>
+                <dd>
+                    <span>{{organization.leaf}}</span>
+                </dd>
+                <dt><span jhiTranslate="getewayApp.organization.upper">Upper</span></dt>
+                <dd>
+                    <div *ngIf="organization.upperId">
+                        <a [routerLink]="['/organization', organization.upperId, 'view']">{{organization.upperId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/organization', organization.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

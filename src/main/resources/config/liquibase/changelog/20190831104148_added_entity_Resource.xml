@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <!--
+        Added the entity Resource.
+    -->
+    <changeSet id="20190831104148-1" author="jhipster">
+        <createTable tableName="t_resourcex" remarks="资源 entity. @author zhenfuxu@gmail.com.">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="res_router_link" type="varchar(255)" remarks="资源连接">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_description" type="varchar(255)" remarks="资源描述">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_flag" type="varchar(255)" remarks="资源标记">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_operate" type="varchar(255)" remarks="资源操作">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_href" type="varchar(255)" remarks="资源a连接">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_src" type="varchar(255)" remarks="资源源地址">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_text" type="varchar(255)" remarks="资源显示文本">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_class" type="varchar(255)" remarks="资源css类">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_eff_date" type="datetime" remarks="资源生效时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_exp_date" type="datetime" remarks="资源失效时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_lft" type="bigint" remarks="资源左">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_rgt" type="bigint" remarks="资源右">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_level" type="bigint" remarks="资源层级">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_order" type="bigint" remarks="资源顺序">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="leaf" type="boolean" remarks="资源是否叶子">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_disabled" type="boolean" remarks="资源禁用">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_checked" type="boolean" remarks="资源勾选">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_expanded" type="boolean" remarks="资源展开">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="res_selected" type="boolean" remarks="资源选中">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upper_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+
+        <dropDefaultValue tableName="t_resourcex" columnName="res_eff_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="t_resourcex" columnName="res_exp_date" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20190831104148-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20190831104148-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/t_resourcex.csv"
+                  separator=";"
+                  tableName="t_resourcex">
+            <column name="id" type="numeric"/>
+            <column name="res_router_link" type="string"/>
+            <column name="res_description" type="string"/>
+            <column name="res_flag" type="string"/>
+            <column name="res_operate" type="string"/>
+            <column name="res_href" type="string"/>
+            <column name="res_src" type="string"/>
+            <column name="res_text" type="string"/>
+            <column name="res_class" type="string"/>
+            <column name="res_eff_date" type="datetime"/>
+            <column name="res_exp_date" type="datetime"/>
+            <column name="res_lft" type="numeric"/>
+            <column name="res_rgt" type="numeric"/>
+            <column name="res_level" type="numeric"/>
+            <column name="res_order" type="numeric"/>
+            <column name="leaf" type="boolean"/>
+            <column name="res_disabled" type="boolean"/>
+            <column name="res_checked" type="boolean"/>
+            <column name="res_expanded" type="boolean"/>
+            <column name="res_selected" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

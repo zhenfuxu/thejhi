@@ -1,0 +1,46 @@
+{
+  "getewayApp": {
+    "organization": {
+      "home": {
+        "title": "Organizations",
+        "createLabel": "创建新 Organization",
+        "createOrEditLabel": "创建或编辑 Organization",
+        "notFound": "No Organizations found"
+      },
+      "created": "Organization {{ param }} 创建成功",
+      "updated": "Organization {{ param }} 更新成功",
+      "deleted": "Organization {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Organization {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Organization"
+      },
+      "orgName": "Org Name",
+      "orgCode": "Org Code",
+      "orgFlag": "Org Flag",
+      "orgAreaCode": "Org Area Code",
+      "orgAreaName": "Org Area Name",
+      "orgDescription": "Org Description",
+      "orgLft": "Org Lft",
+      "orgRgt": "Org Rgt",
+      "orgLevel": "Org Level",
+      "orgOrder": "Org Order",
+      "leaf": "Leaf",
+      "upper": "Upper",
+      "help": {
+        "orgName": "机构名称",
+        "orgCode": "机构代码",
+        "orgFlag": "机构标记",
+        "orgAreaCode": "机构行政区划编码",
+        "orgAreaName": "机构行政区划名字",
+        "orgDescription": "机构描述",
+        "orgLft": "机构左子树",
+        "orgRgt": "机构右子树",
+        "orgLevel": "机构层级",
+        "orgOrder": "机构排序",
+        "leaf": "是否叶子节点"
+      }
+    }
+  }
+}

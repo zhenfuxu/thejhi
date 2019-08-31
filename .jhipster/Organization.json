@@ -1,0 +1,80 @@
+{
+    "name": "Organization",
+    "fields": [
+        {
+            "fieldName": "orgName",
+            "javadoc": "机构名称",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgCode",
+            "javadoc": "机构代码",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgFlag",
+            "javadoc": "机构标记",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgAreaCode",
+            "javadoc": "机构行政区划编码",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgAreaName",
+            "javadoc": "机构行政区划名字",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgDescription",
+            "javadoc": "机构描述",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgLft",
+            "javadoc": "机构左子树",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "orgRgt",
+            "javadoc": "机构右子树",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "orgLevel",
+            "javadoc": "机构层级",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "orgOrder",
+            "javadoc": "机构排序",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "leaf",
+            "javadoc": "是否叶子节点",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "organization",
+            "otherEntityRelationshipName": "organization",
+            "javadoc": "The 上级。",
+            "relationshipName": "upper",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190831104147",
+    "javadoc": "组织机构 entity.\n@author zhenfuxu@gmail.com.",
+    "entityTableName": "t_organizationx",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
