@@ -11,4 +11,23 @@ eg $input-color: red;
 @import '~bootstrap/scss/bootstrap';
 @import '~bootswatch/dist/flatly/bootswatch';
 
+// @import '~@coreui/icons/scss/coreui-icons';
+// @import '~flag-icon-css/sass/flag-icon';
+// @import '~font-awesome/scss/font-awesome';
+// @import '~simple-line-icons/scss/simple-line-icons';
+// Import styles
+// @import "~@coreui/coreui/scss/coreui";
+
+@import '~@coreui/icons/css/coreui-icons.css';
+@import '~flag-icon-css/css/flag-icon.css';
+@import '~font-awesome/css/font-awesome.css';
+@import '~simple-line-icons/css/simple-line-icons.css';
+// If you want to override variables do it here
+@import "coreui/variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "coreui/custom";
 /* jhipster-needle-scss-add-vendor JHipster will add new css style */

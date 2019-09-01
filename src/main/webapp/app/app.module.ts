@@ -17,6 +17,7 @@ import { GetewayAppRoutingModule } from './app-routing.module';
 import { GetewayHomeModule } from './home/home.module';
 import { GetewayAccountModule } from './account/account.module';
 import { GetewayEntityModule } from './entities/entity.module';
+import { CoreuiModule } from './coreui/app.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
@@ -24,7 +25,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
 @NgModule({
   imports: [
     BrowserModule,
-    NgxWebstorageModule.forRoot({ prefix: 'jhi', separator: '-' }),
+    NgxWebstorageModule.forRoot({ prefix: 'app', separator: '-' }),
     NgJhipsterModule.forRoot({
       // set below to true to make alerts look like toast
       alertAsToast: false,
@@ -38,6 +39,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
     GetewayAccountModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     GetewayEntityModule,
+    CoreuiModule,
     GetewayAppRoutingModule
   ],
   declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
