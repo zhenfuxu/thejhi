@@ -11,8 +11,8 @@ export class CarouselsComponent implements OnDestroy {
 
   myInterval: number | false = 6000;
   slides: any[] = [];
-  activeSlideIndex: number = 0;
-  noWrapSlides: boolean = false;
+  activeSlideIndex = 0;
+  noWrapSlides = false;
 
   constructor() {
     for (let i = 0; i < 4; i++) {

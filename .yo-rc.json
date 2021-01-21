@@ -4,7 +4,7 @@
       "packageName": "com.mycompany.myapp",
       "nativeLanguage": "zh-cn"
     },
-    "jhipsterVersion": "6.2.0",
+    "jhipsterVersion": "6.10.5",
     "applicationType": "gateway",
     "baseName": "geteway",
     "packageName": "com.mycompany.myapp",
@@ -28,22 +28,16 @@
     "clientFramework": "angularX",
     "clientTheme": "flatly",
     "clientThemeVariant": "primary",
-    "testFrameworks": [
-      "gatling",
-      "cucumber",
-      "protractor"
-    ],
+    "testFrameworks": ["gatling", "cucumber", "protractor"],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
     "enableTranslation": true,
     "nativeLanguage": "zh-cn",
-    "languages": [
-      "zh-cn",
-      "en",
-      "fr"
-    ],
-    "blueprints": []
+    "languages": ["zh-cn", "en", "fr"],
+    "blueprints": [],
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1611117879147
   }
 }

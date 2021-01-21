@@ -25,7 +25,7 @@
           "skipTests": true
         }
       },
-      "prefix": "app",
+      "prefix": "jhi",
       "architect": {}
     }
   },

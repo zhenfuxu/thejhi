@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import { ChartType } from "chart.js";
 
 @Component({
   templateUrl: 'dashboard.component.html'
@@ -65,7 +66,7 @@ export class DashboardComponent implements OnInit {
     }
   ];
   public lineChart1Legend = false;
-  public lineChart1Type = 'line';
+  public lineChart1Type: ChartType = 'line';
 
   // lineChart2
   public lineChart2Data: Array<any> = [
@@ -124,7 +125,7 @@ export class DashboardComponent implements OnInit {
     }
   ];
   public lineChart2Legend = false;
-  public lineChart2Type = 'line';
+  public lineChart2Type: ChartType = 'line';
 
 
   // lineChart3
@@ -170,7 +171,7 @@ export class DashboardComponent implements OnInit {
     }
   ];
   public lineChart3Legend = false;
-  public lineChart3Type = 'line';
+  public lineChart3Type: ChartType = 'line';
 
 
   // barChart1
@@ -207,7 +208,7 @@ export class DashboardComponent implements OnInit {
     }
   ];
   public barChart1Legend = false;
-  public barChart1Type = 'bar';
+  public barChart1Type: ChartType = 'bar';
 
   // mainChart
 
@@ -303,7 +304,7 @@ export class DashboardComponent implements OnInit {
     }
   ];
   public mainChartLegend = false;
-  public mainChartType = 'line';
+  public mainChartType: ChartType = 'line';
 
   // social box charts
 
@@ -371,7 +372,7 @@ export class DashboardComponent implements OnInit {
     }
   ];
   public brandBoxChartLegend = false;
-  public brandBoxChartType = 'line';
+  public brandBoxChartType: ChartType = 'line';
 
   public random(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);

@@ -4,10 +4,9 @@ import { Component } from '@angular/core';
   templateUrl: 'collapses.component.html'
 })
 export class CollapsesComponent {
-
-  constructor() { }
-
+  
   isCollapsed: boolean = false;
+  constructor() { }
 
   collapsed(event: any): void {
     // console.log(event);

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { getStyle } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import { ChartType } from "chart.js";
 
 @Component({
   templateUrl: 'widgets.component.html'
@@ -63,7 +64,7 @@ export class WidgetsComponent {
     }
   ];
   public lineChart1Legend = false;
-  public lineChart1Type = 'line';
+  public lineChart1Type: ChartType = 'line';
 
   // lineChart2
   public lineChart2Data: Array<any> = [
@@ -122,7 +123,7 @@ export class WidgetsComponent {
     }
   ];
   public lineChart2Legend = false;
-  public lineChart2Type = 'line';
+  public lineChart2Type: ChartType = 'line';
 
 
   // lineChart3
@@ -168,7 +169,7 @@ export class WidgetsComponent {
     }
   ];
   public lineChart3Legend = false;
-  public lineChart3Type = 'line';
+  public lineChart3Type: ChartType = 'line';
 
 
   // barChart1
@@ -205,7 +206,7 @@ export class WidgetsComponent {
     }
   ];
   public barChart1Legend = false;
-  public barChart1Type = 'bar';
+  public barChart1Type: ChartType = 'bar';
 
   // lineChart4
   public lineChart4Data: Array<any> = [
@@ -243,7 +244,7 @@ export class WidgetsComponent {
     }
   ];
   public lineChart4Legend = false;
-  public lineChart4Type = 'line';
+  public lineChart4Type: ChartType = 'line';
 
 
   // barChart2
@@ -283,7 +284,7 @@ export class WidgetsComponent {
     }
   ];
   public barChart2Legend = false;
-  public barChart2Type = 'bar';
+  public barChart2Type: ChartType = 'bar';
 
 
   // barChart3
@@ -334,7 +335,7 @@ export class WidgetsComponent {
     }
   ];
   public barChart3Legend = false;
-  public barChart3Type = 'bar';
+  public barChart3Type: ChartType = 'bar';
 
 
   // lineChart5
@@ -387,5 +388,5 @@ export class WidgetsComponent {
     }
   ];
   public lineChart5Legend = false;
-  public lineChart5Type = 'line';
+  public lineChart5Type: ChartType = 'line';
 }

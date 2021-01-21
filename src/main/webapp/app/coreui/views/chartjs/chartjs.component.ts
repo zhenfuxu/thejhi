@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChartType } from "chart.js";
 
 @Component({
   templateUrl: 'chartjs.component.html'
@@ -43,7 +44,7 @@ export class ChartJSComponent {
     }
   ];
   public lineChartLegend = true;
-  public lineChartType = 'line';
+  public lineChartType: ChartType = 'line';
 
   // barChart
   public barChartOptions: any = {
@@ -51,7 +52,7 @@ export class ChartJSComponent {
     responsive: true
   };
   public barChartLabels: string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  public barChartType = 'bar';
+  public barChartType: ChartType = 'bar';
   public barChartLegend = true;
 
   public barChartData: any[] = [
@@ -62,7 +63,7 @@ export class ChartJSComponent {
   // Doughnut
   public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
   public doughnutChartData: number[] = [350, 450, 100];
-  public doughnutChartType = 'doughnut';
+  public doughnutChartType: ChartType = 'doughnut';
 
   // Radar
   public radarChartLabels: string[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
@@ -71,19 +72,19 @@ export class ChartJSComponent {
     {data: [65, 59, 90, 81, 56, 55, 40], label: 'Series A'},
     {data: [28, 48, 40, 19, 96, 27, 100], label: 'Series B'}
   ];
-  public radarChartType = 'radar';
+  public radarChartType: ChartType = 'radar';
 
   // Pie
   public pieChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
   public pieChartData: number[] = [300, 500, 100];
-  public pieChartType = 'pie';
+  public pieChartType: ChartType = 'pie';
 
   // PolarArea
   public polarAreaChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales', 'Telesales', 'Corporate Sales'];
   public polarAreaChartData: number[] = [300, 500, 100, 40, 120];
   public polarAreaLegend = true;
 
-  public polarAreaChartType = 'polarArea';
+  public polarAreaChartType: ChartType = 'polarArea';
 
   // events
   public chartClicked(e: any): void {
